@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="杜健 · 独立开发。天气、健康与日常工具。">
+  <title>杜健 · 独立开发</title>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>晴</text></svg>">
+  <style>
+    :root {
+      --bg: #f3efe6;
+      --ink: #1c1a16;
+      --muted: #6b655c;
+      --line: #d8d1c4;
+      --accent: #2f6f8f;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html, body {
+      background: var(--bg);
+      color: var(--ink);
+      font-family: "Songti SC", "STSong", "Noto Serif SC", "Source Han Serif SC", Georgia, serif;
+      line-height: 1.6;
+    }
+
+    body {
+      min-height: 100vh;
+      padding: 48px 24px 80px;
+    }
+
+    .wrap {
+      max-width: 720px;
+      margin: 0 auto;
+    }
+
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      border-bottom: 1px solid var(--ink);
+      padding-bottom: 12px;
+      margin-bottom: 48px;
+    }
+
+    .mark {
+      font-size: 14px;
+      letter-spacing: 0.28em;
+      text-transform: uppercase;
+      font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    }
+
+    nav a {
+      color: var(--ink);
+      text-decoration: none;
+      font-size: 14px;
+      font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+      margin-left: 20px;
+    }
+
+    nav a:hover { color: var(--accent); }
+
+    h1 {
+      font-size: clamp(56px, 12vw, 96px);
+      font-weight: 600;
+      letter-spacing: 0.18em;
+      line-height: 1;
+      margin: 8px 0 20px;
+    }
+
+    .lede {
+      font-size: 20px;
+      max-width: 28em;
+      color: var(--ink);
+    }
+
+    .lede em {
+      font-style: normal;
+      color: var(--accent);
+    }
+
+    section {
+      margin-top: 64px;
+    }
+
+    h2 {
+      font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+      font-size: 12px;
+      font-weight: 500;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 16px;
+    }
+
+    .work {
+      border-top: 1px solid var(--line);
+    }
+
+    .work a {
+      display: grid;
+      grid-template-columns: 48px 1fr auto;
+      gap: 16px;
+      align-items: baseline;
+      padding: 18px 0;
+      border-bottom: 1px solid var(--line);
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .work a:hover .name { color: var(--accent); }
+
+    .idx {
+      font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+      font-size: 13px;
+      color: var(--muted);
+    }
+
+    .name {
+      font-size: 22px;
+    }
+
+    .note {
+      display: block;
+      font-size: 15px;
+      color: var(--muted);
+      margin-top: 4px;
+    }
+
+    .plat {
+      font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+      font-size: 12px;
+      letter-spacing: 0.08em;
+      color: var(--muted);
+      white-space: nowrap;
+    }
+
+    .about p {
+      font-size: 18px;
+      max-width: 32em;
+      margin-bottom: 12px;
+    }
+
+    footer {
+      margin-top: 80px;
+      padding-top: 16px;
+      border-top: 1px solid var(--ink);
+      display: flex;
+      justify-content: space-between;
+      font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+      font-size: 12px;
+      color: var(--muted);
+      letter-spacing: 0.06em;
+    }
+
+    @media (max-width: 560px) {
+      body { padding: 28px 18px 56px; }
+      h1 { letter-spacing: 0.12em; }
+      .work a {
+        grid-template-columns: 36px 1fr;
+      }
+      .plat {
+        grid-column: 2;
+        margin-top: -8px;
+        padding-bottom: 4px;
+      }
+      footer { flex-direction: column; gap: 8px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <div class="mark">Dujian</div>
+      <nav>
+        <a href="#work">作品</a>
+        <a href="#about">关于</a>
+      </nav>
+    </header>
+
+    <h1>杜健</h1>
+    <p class="lede">独立开发。做跟<em>天气、健康、日常工具</em>有关的小产品，把复杂数据收成打开就能用的建议。</p>
+
+    <section id="work">
+      <h2>Selected work</h2>
+      <div class="work">
+        <a href="https://github.com/Jericho018" id="link-weather">
+          <span class="idx">01</span>
+          <span>
+            <span class="name">Weather Health</span>
+            <span class="note">天气健康助手：按当天气象给出穿衣、防晒与防护建议。</span>
+          </span>
+          <span class="plat">iOS</span>
+        </a>
+        <a href="https://github.com/Jericho018" id="link-paste">
+          <span class="idx">02</span>
+          <span>
+            <span class="name">PasteEase</span>
+            <span class="note">复制粘贴免打扰：剪贴板历史、快速粘贴、键盘与分享扩展。</span>
+          </span>
+          <span class="plat">iOS / macOS</span>
+        </a>
+        <a href="https://github.com/Jericho018" id="link-law">
+          <span class="idx">03</span>
+          <span>
+            <span class="name">World Laws</span>
+            <span class="note">全球法律向导：用日常语言描述问题，获得结构化的初步参考。</span>
+          </span>
+          <span class="plat">Web</span>
+        </a>
+      </div>
+    </section>
+
+    <section id="about" class="about">
+      <h2>About</h2>
+      <p>目前主要做 iOS 与小型 Web 产品。关注天气、空气、健康指标如何变成可执行的行动，而不是再多一张仪表盘。</p>
+      <p>此站托管于 GitHub Pages。</p>
+    </section>
+
+    <footer>
+      <span>© 2026 杜健</span>
+      <span>GitHub Pages</span>
+    </footer>
+  </div>
+</body>
+</html>
