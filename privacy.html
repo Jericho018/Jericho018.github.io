@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Privacy Policy · Weather Health</title>
+  <style>
+    :root { --bg:#f3efe6; --ink:#1c1a16; --muted:#6b655c; --line:#d8d1c4; --accent:#2f6f8f; }
+    * { box-sizing:border-box; margin:0; padding:0; }
+    body { background:var(--bg); color:var(--ink); font-family:"Helvetica Neue", Helvetica, Arial, "Songti SC", serif; line-height:1.65; padding:48px 24px 80px; }
+    .wrap { max-width:720px; margin:0 auto; }
+    header { display:flex; justify-content:space-between; align-items:baseline; border-bottom:1px solid var(--ink); padding-bottom:12px; margin-bottom:32px; }
+    .mark, nav a { font-size:14px; letter-spacing:0.12em; text-transform:uppercase; color:var(--ink); text-decoration:none; }
+    nav a { margin-left:16px; }
+    h1 { font-size:32px; margin-bottom:8px; }
+    .meta { color:var(--muted); margin-bottom:32px; }
+    h2 { font-size:18px; margin:28px 0 10px; }
+    p, li { margin-bottom:10px; }
+    ul { padding-left:1.2em; }
+    .zh { margin-top:48px; padding-top:32px; border-top:1px solid var(--line); }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <div class="mark">Weather Health</div>
+      <nav>
+        <a href="index.html">Home</a>
+        <a href="terms.html">Terms</a>
+      </nav>
+    </header>
+    <h1>Privacy Policy</h1>
+    <p class="meta">Effective date: September 17, 2026 · Developer: Dujian (杜健)</p>
+
+    <p>Weather Health (“the app”) helps you turn local weather into health and outing advice. This policy describes what data we collect, how we collect it, how we use it, and which third parties receive it.</p>
+
+    <h2>1. Data we collect</h2>
+    <ul>
+      <li><strong>Location (When In Use):</strong> used only on device to load local weather. We do not store a location history on our servers.</li>
+      <li><strong>Weather snapshot for AI (only after you tap Allow):</strong> city name, temperature, feels-like, UV, air quality, pollen, humidity, wind, precipitation chance, and short forecast text. We do <em>not</em> send precise GPS coordinates, your name, Apple ID, contacts, photos, or health records from HealthKit.</li>
+      <li><strong>Purchases:</strong> subscriptions are processed by Apple. We receive an entitlement (subscribed or not). We do not receive your payment card details.</li>
+      <li><strong>On-device preferences:</strong> language, temperature unit, AI consent flag, and a short local cache of the last AI result. These stay on the device.</li>
+    </ul>
+
+    <h2>2. How we collect data</h2>
+    <ul>
+      <li>Location: iOS Core Location, after the system permission prompt.</li>
+      <li>Weather: Apple WeatherKit, with Open-Meteo as fallback. Air quality and pollen come from Open-Meteo.</li>
+      <li>AI snapshot: built on the device from the weather already shown, then sent only if you have granted AI consent.</li>
+    </ul>
+
+    <h2>3. How we use data</h2>
+    <ul>
+      <li>Show local weather, air quality, pollen, and health tips.</li>
+      <li>Generate AI outing and health advice after you subscribe and consent.</li>
+      <li>Unlock WeatherHealth Plus via Apple In-App Purchase.</li>
+    </ul>
+    <p>We do not sell personal data. We do not use advertising identifiers. We do not track you across other companies’ apps or websites. The app has no ads and no third-party analytics SDK.</p>
+
+    <h2>4. Third parties</h2>
+    <ul>
+      <li><strong>Apple:</strong> WeatherKit (weather) and StoreKit (subscriptions), under Apple’s terms.</li>
+      <li><strong>Open-Meteo:</strong> weather fallback, air quality, and pollen. Requests include coordinates needed to fetch that data.</li>
+      <li><strong>Cloudflare, Inc.:</strong> our Worker proxy at weatherhealthproxy.wing08521.workers.dev receives the AI query so the DeepSeek API key is not embedded in the app.</li>
+      <li><strong>Hangzhou DeepSeek Artificial Intelligence Co., Ltd. (DeepSeek):</strong> receives the weather snapshot (via the Worker) solely to generate the analysis text. This happens only after in-app consent. DeepSeek’s handling of prompts is governed by DeepSeek’s own terms and privacy policy.</li>
+    </ul>
+    <p>These providers are expected to protect the data with a standard that is at least equivalent to this policy for the limited purpose described above.</p>
+
+    <h2>5. Your choices</h2>
+    <ul>
+      <li>Decline location: the app shows cached or sample weather.</li>
+      <li>Decline AI sharing: tap not to allow, or turn off “Allow sending weather snapshots to DeepSeek” in Settings. No snapshot is sent.</li>
+      <li>Manage or cancel the subscription in iOS Settings → Apple ID → Subscriptions.</li>
+    </ul>
+
+    <h2>6. Children</h2>
+    <p>Weather Health is a general-audience weather and health advice app with optional paid subscriptions and optional third-party AI. It is not directed at children under 13 and is not a Kids Category product.</p>
+
+    <h2>7. Contact</h2>
+    <p>Questions: use the App Store support contact for Weather Health, or GitHub <a href="https://github.com/Jericho018">Jericho018</a>.</p>
+
+    <div class="zh">
+      <h1>隐私政策</h1>
+      <p class="meta">生效日期：2026年9月17日 · 开发者：杜健</p>
+      <p>「天气健康」用于把当地天气变成健康与出行建议。本政策说明收集哪些数据、如何收集、如何使用，以及会共享给哪些第三方。</p>
+      <h2>收集的数据</h2>
+      <ul>
+        <li><strong>使用期间的位置：</strong>仅在设备上用于加载当地天气，我们不在自有服务器保存位置历史。</li>
+        <li><strong>AI 天气快照（仅在你点击同意之后）：</strong>城市名、气温、体感、紫外线、空气质量、花粉、湿度、风速、降水概率和短期预报。不发送精确 GPS、姓名、Apple ID、通讯录、照片或 HealthKit 健康档案。</li>
+        <li><strong>购买：</strong>订阅由 Apple 处理。我们只拿到是否已订阅的权益，收不到银行卡信息。</li>
+        <li><strong>设备内偏好：</strong>语言、温度单位、AI 同意开关和最近一次分析结果的本地缓存。</li>
+      </ul>
+      <h2>第三方</h2>
+      <ul>
+        <li>Apple（WeatherKit、StoreKit）</li>
+        <li>Open-Meteo（天气回退、空气质量、花粉）</li>
+        <li>Cloudflare（我们运营的 Worker 代理，避免把 API Key 写进 App）</li>
+        <li>杭州深度求索人工智能基础技术研究有限公司（DeepSeek）：仅在你同意后，经 Worker 接收天气快照以生成分析文本</li>
+      </ul>
+      <p>我们不出售个人数据，不做广告追踪，不含第三方统计 SDK。关闭设置中的 AI 开关后立即停止向 DeepSeek 发送数据。</p>
+    </div>
+  </div>
+</body>
+</html>
