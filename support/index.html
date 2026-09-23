@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Support · Weather Health</title>
+  <meta name="description" content="Weather Health 支持：通过表单或 GitHub 联系开发者杜健。">
+  <link rel="canonical" href="https://jericho018.github.io/support/">
+  <style>
+    :root { --bg:#f3efe6; --ink:#1c1a16; --muted:#6b655c; --line:#d8d1c4; --accent:#2f6f8f; }
+    * { box-sizing:border-box; margin:0; padding:0; }
+    body { background:var(--bg); color:var(--ink); font-family:"Helvetica Neue", Helvetica, Arial, "Songti SC", serif; line-height:1.65; padding:48px 24px 80px; }
+    .wrap { max-width:720px; margin:0 auto; }
+    header { display:flex; justify-content:space-between; align-items:baseline; border-bottom:1px solid var(--ink); padding-bottom:12px; margin-bottom:32px; }
+    .mark, nav a { font-size:14px; letter-spacing:0.12em; text-transform:uppercase; color:var(--ink); text-decoration:none; }
+    nav a { margin-left:16px; }
+    nav a:hover { color:var(--accent); }
+    h1 { font-size:32px; margin-bottom:8px; }
+    .meta { color:var(--muted); margin-bottom:28px; }
+    h2 { font-size:18px; margin:28px 0 10px; }
+    p, li { margin-bottom:10px; }
+    ul { padding-left:1.2em; }
+    a { color:var(--accent); }
+    .zh { margin-top:48px; padding-top:32px; border-top:1px solid var(--line); }
+    form { margin-top:8px; }
+    label { display:block; font-size:13px; letter-spacing:0.06em; text-transform:uppercase; color:var(--muted); margin:16px 0 6px; font-family:"Helvetica Neue", Helvetica, Arial, sans-serif; }
+    input, select, textarea {
+      width:100%;
+      border:1px solid var(--line);
+      background:#fffdf8;
+      color:var(--ink);
+      font-size:16px;
+      padding:12px 14px;
+      border-radius:8px;
+      font-family:inherit;
+    }
+    textarea { min-height:140px; resize:vertical; }
+    button {
+      margin-top:20px;
+      border:0;
+      background:var(--ink);
+      color:#fffdf8;
+      font-size:15px;
+      letter-spacing:0.04em;
+      padding:12px 20px;
+      border-radius:8px;
+      cursor:pointer;
+      font-family:"Helvetica Neue", Helvetica, Arial, sans-serif;
+    }
+    button:hover { background:var(--accent); }
+    .hint { font-size:14px; color:var(--muted); margin-top:12px; }
+    .alt { margin-top:20px; padding:14px 16px; border:1px solid var(--line); border-radius:8px; }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <div class="mark">Weather Health</div>
+      <nav>
+        <a href="../index.html">Home</a>
+        <a href="../privacy.html">Privacy</a>
+        <a href="../terms.html">Terms</a>
+      </nav>
+    </header>
+
+    <h1>Support</h1>
+    <p class="meta">Developer: Dujian (杜健) · Weather Health and other indie apps</p>
+
+    <p>Use the form below to report a problem, ask about a subscription, or request help. Submitting opens a GitHub issue with your message so it reaches the developer without putting an inbox address on this page.</p>
+
+    <h2>Contact form</h2>
+    <form id="support-form">
+      <label for="name">Name</label>
+      <input id="name" name="name" type="text" required autocomplete="name" placeholder="Your name">
+
+      <label for="email">Reply email</label>
+      <input id="email" name="email" type="email" required autocomplete="email" placeholder="you@example.com">
+
+      <label for="app">App</label>
+      <select id="app" name="app">
+        <option value="Weather Health" selected>Weather Health</option>
+        <option value="PasteEase">PasteEase</option>
+        <option value="World Laws">World Laws</option>
+        <option value="Other">Other</option>
+      </select>
+
+      <label for="message">Message</label>
+      <textarea id="message" name="message" required placeholder="What happened? Include your iOS version if it is an app issue."></textarea>
+
+      <button type="submit">Send support request</button>
+      <p class="hint">You will be asked to sign in to GitHub (a free account is enough) to send the request.</p>
+    </form>
+
+    <div class="alt">
+      <p>Prefer to write the issue yourself:</p>
+      <p><a href="https://github.com/Jericho018/Jericho018.github.io/issues/new?title=%5BSupport%5D%20Weather%20Health">Open a GitHub Issue</a></p>
+      <p>Developer profile: <a href="https://github.com/Jericho018">Jericho018</a></p>
+    </div>
+
+    <h2>Subscriptions</h2>
+    <p>WeatherHealth Plus is billed by Apple. Manage or cancel in iOS Settings → Apple ID → Subscriptions. Refunds are handled by Apple, not by this site.</p>
+
+    <div class="zh">
+      <h1>支持</h1>
+      <p class="meta">开发者：杜健 · 天气健康及其他独立应用</p>
+      <p>用于反馈问题、询问订阅或寻求帮助。提交后会打开 GitHub Issue，把你的留言发给开发者，页面上不公开个人邮箱。</p>
+      <p>订阅由 Apple 处理，请在「设置 → Apple ID → 订阅」中管理或取消。退款由 Apple 处理。</p>
+    </div>
+  </div>
+  <script>
+    document.getElementById("support-form").addEventListener("submit", function (event) {
+      event.preventDefault();
+      var name = document.getElementById("name").value.trim();
+      var email = document.getElementById("email").value.trim();
+      var app = document.getElementById("app").value;
+      var message = document.getElementById("message").value.trim();
+      var title = "[Support] " + app + " — " + name;
+      var body = [
+        "**From:** " + name,
+        "**Reply-to:** " + email,
+        "**App:** " + app,
+        "",
+        message
+      ].join("\n");
+      var url = "https://github.com/Jericho018/Jericho018.github.io/issues/new"
+        + "?title=" + encodeURIComponent(title)
+        + "&body=" + encodeURIComponent(body);
+      window.location.href = url;
+    });
+  </script>
+</body>
+</html>
